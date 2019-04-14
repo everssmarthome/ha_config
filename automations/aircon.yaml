@@ -1,0 +1,192 @@
+- id: hastartupformyair
+  alias: Initialise MyAir Inputs
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: automation.trigger
+      entity_id: automation.setmyairzoneflowselector
+    - condition: state
+      entity_id: 'switch.myair_power'
+      state: 'off'
+    - service: switch.turn_off
+      entity_id: switch.myair_md_living, switch.myair_ta_living
+
+
+- id: setmyairpoweron
+  alias: Set Power On
+  trigger:
+    platform: state
+    entity_id: group.aircon_power
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.myair_power
+
+- id: setmyairpoweroff
+  alias: Set Power Off
+  trigger:
+    platform: state
+    entity_id: group.aircon_power
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.myair_power
+
+- id: setmyairmodeselector
+  alias: Set MyAir Mode Selector
+  initial_state: True
+  trigger:
+    platform: state
+    entity_id: sensor.myair_mode
+  action:
+    service: input_select.select_option
+    entity_id: input_select.myair_mode
+    data_template:
+      option: '{{ states.sensor.myair_mode.state }}'
+
+- id: setmyairacmode
+  alias: Set MyAir AC mode
+  initial_state: True
+  trigger:
+    entity_id: input_select.myair_mode
+    platform: state
+  action:
+    service: shell_command.myair_setcmd
+    data_template:
+      json: '%7B%22ac1%22:%7B%22info%22:%7B%22mode%22:%22{{ states.input_select.myair_mode.state }}%22%7D%7D%7D'
+
+- id: setmyairfanselector
+  alias: Set MyAir Fan Selector
+  initial_state: True
+  trigger:
+    platform: state
+    entity_id: sensor.myair_fanspeed
+  action:
+    service: input_select.select_option
+    entity_id: input_select.myair_fan
+    data_template:
+      option: '{{ states.sensor.myair_fanspeed.state }}'
+
+- id: setmyairacfan
+  alias: Set MyAir AC fan
+  initial_state: True
+  trigger:
+    entity_id: input_select.myair_fan
+    platform: state
+  action:
+    service: shell_command.myair_setcmd
+    data_template:
+      json: '%7B%22ac1%22:%7B%22info%22:%7B%22fan%22:%22{{ states.input_select.myair_fan.state }}%22%7D%7D%7D'
+- id: setmyairtempselector
+  alias: Set MyAir Temp Selector
+  initial_state: True
+  trigger:
+    platform: state
+    entity_id: sensor.myair_settemp
+  action:
+    service: input_number.set_value
+    entity_id: input_number.myair_settemp
+    data_template:
+      value: '{{ states.sensor.myair_settemp.state }}'
+
+- id: setmyairacTemp
+  alias: Set MyAir AC Temp
+  initial_state: True
+  trigger:
+    entity_id: input_number.myair_settemp
+    platform: state
+  action:
+    service: shell_command.myair_setcmd
+    data_template:
+      json: '%7B%22ac1%22:%7B%22info%22:%7B%22setTemp%22:%22{{ states.input_number.myair_settemp.state }}%22%7D%7D%7D'
+
+- id: setmyairzoneairflow
+  alias: Set MyAir Zone Airflow
+  trigger:
+    entity_id: input_number.myair_ta_bedroom,input_number.myair_ta_ensuite,input_number.myair_ta_nw_bedroom,input_number.myair_ta_study,input_number.myair_ta_sw_bedroom,input_number.myair_md_bedroom,input_number.myair_md_study,input_number.myair_md_living,input_number.myair_ta_living,input_number.myair_md_media
+    platform: state
+  action:
+    service: shell_command.myair_setcmd
+    data_template:
+      json: '%7B%22ac1%22:%7B%22zones%22:%7B%22{{ trigger.to_state.attributes["zone_id"] }}%22:%7B%22value%22:%22{{ trigger.to_state.state | int }}%22%7D%7D%7D%7D'
+
+- id: setmyairzoneflowselector
+  alias: Set MyAir Zone Airflow Selector
+  trigger:
+    entity_id: sensor.myair_ta_bedroom_airflow,sensor.myair_ta_ensuite_airflow,sensor.myair_ta_nw_bedroom_airflow,sensor.myair_ta_study_airflow,sensor.myair_ta_sw_bedroom_airflow,sensor.myair_md_bedroom_airflow,sensor.myair_md_study_airflow,sensor.myair_md_living_airflow,sensor.myair_ta_living_airflow,sensor.myair_md_media_airflow
+    platform: state
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: '{{ trigger.entity_id | replace("sensor.","input_number.") | replace("_airflow","") }}'
+        value: "{{ states(trigger.entity_id) | float }}"
+
+# - id: setmyairstartontimer
+#   alias: Start the Timer to Turn On the Aircon
+#   trigger:
+#     entity_id: input_boolean.myair_ta_auto_power_on, input_boolean.myair_md_auto_power_on
+#     platform: state
+#     to: 'on'
+#   action:
+#     - service: timer.start
+#       data_template:
+#         entity_id: '{{ trigger.entity_id | replace("input_boolean", "timer") | replace("_auto_power", "") | replace("_on", "_on_timer") }}'
+#         duration: '{{ (states((trigger.entity_id | replace("input_boolean", "input_number") | replace("_auto_power", "") | replace("_on", "_on_timer"))) | round("floor")) | int }}:{{ (states((trigger.entity_id | replace("input_boolean", "input_number") | replace("_auto_power", "") | replace("_on", "_on_timer"))) | float * 60 % 60) | int }}:00'
+
+# - id: myaircancelontimer
+#   alias: Cancel the Timer to Turn On the Aircon
+#   trigger:
+#     entity_id: input_boolean.myair_ta_auto_power_on, input_boolean.myair_md_auto_power_on
+#     platform: state
+#     to: 'off'
+#   action:
+#     - service: timer.cancel
+#       data_template:
+#         entity_id: '{{ trigger.entity_id | replace("input_boolean", "timer") | replace("_auto_power", "") | replace("_on", "_on_timer") }}'
+
+# - id: myairturnonbytimer 
+#   alias: Turn On the Aircon When Timer Reaches 0
+#   trigger:
+#     entity_id: myair_ta_on_timer, myair_md_on_timer
+#     platform: event
+#     event: timer.finished
+#   action:
+#   - service: switch.turn_on
+#     data:
+#       message: "Timer stop"
+
+- id: setmyairstartofftimer
+  alias: Start the Timer to Turn Off the Aircon
+  trigger:
+    entity_id: input_boolean.myair_ta_auto_power_off, input_boolean.myair_md_auto_power_off
+    platform: state
+    to: 'on'
+  action:
+    - service: timer.start
+      data_template:
+        entity_id: '{{ trigger.entity_id | replace("input_boolean", "timer") | replace("_auto_power", "") | replace("_off", "_off_timer") }}'
+        duration: '{{ (states((trigger.entity_id | replace("input_boolean", "input_number") | replace("_auto_power", "") | replace("_off", "_off_timer"))) | round("floor")) | int }}:{{ (states((trigger.entity_id | replace("input_boolean", "input_number") | replace("_auto_power", "") | replace("_off", "_off_timer"))) | float * 60 % 60) | int }}:00'
+
+- id: myaircancelofftimer
+  alias: Cancel the Timer to Turn Off the Aircon
+  trigger:
+    entity_id: input_boolean.myair_ta_auto_power_off, input_boolean.myair_md_auto_power_off
+    platform: state
+    to: 'off'
+  action:
+    - service: timer.cancel
+      data_template:
+        entity_id: '{{ trigger.entity_id | replace("input_boolean", "timer") | replace("_auto_power", "") | replace("_off", "_off_timer") }}'
+
+- id: myairturnoffbytimer 
+  alias: 'Turn Off the Aircon When Timer Reaches 0'
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.myair_ta_off_timer, timer.myair_md_off_timer
+  action:
+  - service: switch.turn_off
+    data_template:
+      entity_id: '{{ "group.%s_aircon_power" | format((trigger.entity_id | replace("myair_", "") | replace("_off_timer", ""))) }}'

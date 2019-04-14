@@ -1,0 +1,10 @@
+- id: zwave_reset
+  alias: Restart ZWave stick
+  trigger:
+    platform: homeassistant
+    # Event can also be 'shutdown'
+    event: shutdown
+  action:
+    service: shell_command.reset_zwave_stick
+    data:
+      zwave_reset_ssh_destination: !secret zwave_reset_ssh_destination

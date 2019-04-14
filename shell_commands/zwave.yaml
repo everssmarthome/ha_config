@@ -1,0 +1,1 @@
+reset_zwave_stick: ssh -i ./.ssh/id_rsa -o StrictHostKeyChecking=no {{ zwave_reset_ssh_destination }} "/etc/hassio/restart_wrapper.sh"

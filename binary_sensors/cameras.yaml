@@ -1,0 +1,24 @@
+- platform: hikvision
+  host: 192.168.86.224
+  port: 80
+  ssl: false
+  username: !secret camera_username
+  password: !secret camera_password
+- platform: hikvision
+  host: 192.168.86.223
+  port: 80
+  ssl: false
+  username: !secret camera_username
+  password: !secret camera_password
+- platform: hikvision
+  host: 192.168.86.222
+  port: 80
+  ssl: false
+  username: !secret camera_username
+  password: !secret camera_password
+- platform: hikvision
+  host: 192.168.86.221
+  port: 80
+  ssl: false
+  username: !secret camera_username
+  password: !secret camera_password

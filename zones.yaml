@@ -1,0 +1,29 @@
+- name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 100
+  icon: mdi:home
+
+- name: Tim's Work
+  latitude: !secret t_work_latitude
+  longitude: !secret t_work_longitude
+  radius: 100
+  icon: mdi:worker
+
+- name: Addy's Work
+  latitude: !secret a_work_latitude
+  longitude: !secret a_work_longitude
+  radius: 100
+  icon: mdi:worker
+
+- name: Dad's Work
+  latitude: !secret d_work_latitude
+  longitude: !secret d_work_longitude
+  radius: 100
+  icon: mdi:worker
+
+- name: Church
+  latitude: !secret church_latitude
+  longitude: !secret church_longitude
+  radius: 100
+  icon: mdi:church

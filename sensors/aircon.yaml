@@ -1,0 +1,85 @@
+- platform: rest
+  scan_interval:
+    seconds: 5
+  resource: http://192.168.86.23:2025/getSystemData
+  name: myair
+  json_attributes:
+    - aircons
+  value_template: 'OK'
+- platform: template
+  sensors:
+    myair_api:
+      friendly_name: AC API
+      value_template: ' {{ states.sensor.myair.attributes.aircons.ac1.info["noOfZones"] }}'
+    myair_power:
+      friendly_name: AC Power
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.info["state"] }}'
+    myair_fanspeed:
+      friendly_name: AC Fan Speed
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.info["fan"] }}'
+    myair_mode:
+      friendly_name: AC Mode
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.info["mode"] }}'
+    myair_settemp:
+      friendly_name: AC Temperature
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.info["setTemp"] }}'
+    myair_ta_bedroom_state:
+      friendly_name: Master Bedroom State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z01["state"] }}'
+    myair_ta_bedroom_airflow:
+      friendly_name: Master Bedroom Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z01["value"] }}'
+    myair_ta_ensuite_state:
+      friendly_name: Ensuite State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z02["state"] }}'
+    myair_ta_ensuite_airflow:
+      friendly_name: Ensuite Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z02["value"] }}'
+    myair_ta_nw_bedroom_state:
+      friendly_name: North Bedroom State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z03["state"] }}'
+    myair_ta_nw_bedroom_airflow:
+      friendly_name: North Bedroom Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z03["value"] }}'
+    myair_ta_study_state:
+      friendly_name: Study State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z04["state"] }}'
+    myair_ta_study_airflow:
+      friendly_name: Study Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z04["value"] }}'
+    myair_ta_sw_bedroom_state:
+      friendly_name: South Bedroom State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z05["state"] }}'
+    myair_ta_sw_bedroom_airflow:
+      friendly_name: South Bedroom Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z05["value"] }}'
+    myair_md_bedroom_state:
+      friendly_name: Bedroom State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z06["state"] }}'
+    myair_md_bedroom_airflow:
+      friendly_name: Bedroom Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z06["value"] }}'
+    myair_md_study_state:
+      friendly_name: Study State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z07["state"] }}'
+    myair_md_study_airflow:
+      friendly_name: Study Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z07["value"] }}'
+    myair_md_living_state:
+      friendly_name: Living State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z08["state"] }}'
+    myair_md_living_airflow:
+      friendly_name: Living Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z08["value"] }}'
+    myair_ta_living_state:
+      friendly_name: Living State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z09["state"] }}'
+    myair_ta_living_airflow:
+      friendly_name: Living Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z09["value"] }}'
+    myair_md_media_state:
+      friendly_name: Media State
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z10["state"] }}'
+    myair_md_media_airflow:
+      friendly_name: Media Airflow
+      value_template: '{{ states.sensor.myair.attributes.aircons.ac1.zones.z10["value"] }}'

@@ -1,0 +1,24 @@
+- platform: ffmpeg
+  name: North-Main (LowRes)
+  input: !secret north_main_rtsp
+- platform: ffmpeg
+  name: NorthEast-Alfresco (LowRes)
+  input: !secret north_east_alfresco_rtsp
+- platform: ffmpeg
+  name: East-Pool (LowRes)
+  input: !secret east_pool_rtsp
+- platform: ffmpeg
+  name: West-Shed (LowRes)
+  input: !secret west_shed_rtsp
+- platform: ffmpeg
+  name: North-Main (HighRes)
+  input: !secret north_main_highres_rtsp
+- platform: ffmpeg
+  name: NorthEast-Alfresco (HighRes)
+  input: !secret north_east_alfresco_highres_rtsp
+- platform: ffmpeg
+  name: East-Pool (HighRes)
+  input: !secret east_pool_highres_rtsp
+- platform: ffmpeg
+  name: West-Shed (HighRes)
+  input: !secret west_shed_highres_rtsp

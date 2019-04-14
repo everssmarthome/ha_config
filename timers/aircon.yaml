@@ -1,0 +1,11 @@
+myair_ta_off_timer:
+    duration: '02:00:00'
+
+# myair_ta_on_timer:
+#     duration: '02:00:00'
+
+myair_md_off_timer:
+    duration: '02:00:00'
+
+# myair_md_on_timer:
+#     duration: '02:00:00'

@@ -1,0 +1,99 @@
+sensor.myair_ta_bedroom_airflow:
+  zone_id: "z01"
+
+sensor.myair_ta_ensuite_airflow:
+  zone_id: "z02"
+
+sensor.myair_ta_nw_bedroom_airflow:
+  zone_id: "z03"
+
+sensor.myair_ta_study_airflow:
+  zone_id: "z04"
+
+sensor.myair_ta_sw_bedroom_airflow:
+  zone_id: "z05"
+
+sensor.myair_md_bedroom_airflow:
+  zone_id: "z06"
+
+sensor.myair_md_study_airflow:
+  zone_id: "z07"
+
+sensor.myair_md_living_airflow:
+  zone_id: "z08"
+
+sensor.myair_ta_living_airflow:
+  zone_id: "z09"
+
+sensor.myair_md_media_airflow:
+  zone_id: "z10"
+
+input_number.myair_ta_bedroom:
+  zone_id: "z01"
+
+input_number.myair_ta_ensuite:
+  zone_id: "z02"
+
+input_number.myair_ta_nw_bedroom:
+  zone_id: "z03"
+
+input_number.myair_ta_study:
+  zone_id: "z04"
+
+input_number.myair_ta_sw_bedroom:
+  zone_id: "z05"
+
+input_number.myair_md_bedroom:
+  zone_id: "z06"
+
+input_number.myair_md_study:
+  zone_id: "z07"
+
+input_number.myair_md_living:
+  zone_id: "z08"
+
+input_number.myair_ta_living:
+  zone_id: "z09"
+
+input_number.myair_md_media:
+  zone_id: "z10"
+
+switch.myair_ta_bedroom:
+  friendly_name: Master Bedroom
+  zone_id: "z01"
+
+switch.myair_ta_ensuite:
+  friendly_name: Ensuite
+  zone_id: "z02"
+
+switch.myair_ta_nw_bedroom:
+  friendly_name: North Bedroom
+  zone_id: "z03"
+
+switch.myair_ta_study:
+  friendly_name: Study
+  zone_id: "z04"
+
+switch.myair_ta_sw_bedroom:
+  friendly_name: South Bedroom
+  zone_id: "z05"
+
+switch.myair_md_bedroom:
+  friendly_name: Master Bedroom
+  zone_id: "z06"
+
+switch.myair_md_study:
+  friendly_name: Study
+  zone_id: "z07"
+
+switch.myair_md_living:
+  friendly_name: Living
+  zone_id: "z08"
+
+switch.myair_ta_living:
+  friendly_name: Living
+  zone_id: "z09"
+
+switch.myair_md_media:
+  friendly_name: Media
+  zone_id: "z10"

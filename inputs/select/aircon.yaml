@@ -1,0 +1,15 @@
+myair_mode:
+  name: AC Mode
+  options:
+    - cool
+    - heat
+    - vent
+    - dry
+  icon: mdi:air-conditioner
+myair_fan:
+  name: AC` Fan
+  options:
+    - low
+    - medium
+    - high
+  icon: mdi:fan

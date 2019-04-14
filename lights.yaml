@@ -1,0 +1,47 @@
+- platform: group
+  name: M&D Lights
+  entities:
+    - light.zwave_md_external_pathway
+    - light.zwave_md_laundry
+    - light.zwave_md_entry
+    - light.zwave_md_kitchen_main
+    - light.zwave_md_kitchen_bench
+    - light.zwave_md_pantry
+    - light.zwave_md_living
+    - light.zwave_md_study
+    - light.zwave_md_hallway
+    - light.zwave_md_bedroom
+    - light.zwave_md_walk_in_robe
+    - light.zwave_md_toilet
+    - light.zwave_md_bathroom_main
+    - light.zwave_md_bathroom_bench
+    - light.zwave_md_media
+    - light.zwave_md_alfresco
+
+- platform: group
+  name: T&A Lights
+  entities:
+    - light.zwave_ta_external_carpark
+    - light.zwave_ta_alfresco
+    - light.zwave_ta_living
+    - light.zwave_ta_dining
+    - light.zwave_ta_stair_base
+    - light.zwave_ta_stair_storage
+    - light.zwave_ta_kitchen_main
+    - light.zwave_ta_kitchen_bench
+    - light.zwave_ta_pantry
+    - light.zwave_ta_downstairs_hall
+    - light.zwave_ta_powder_room
+    - light.zwave_ta_laundry
+    - light.zwave_ta_stairway
+    - light.zwave_ta_bedroom
+    - light.zwave_ta_walk_in_robe
+    - light.zwave_ta_ensuite_main
+    - light.zwave_ta_ensuite_bench
+    - light.zwave_ta_ensuite_toilet
+    - light.zwave_ta_upstairs_hallway
+    - light.zwave_ta_study
+    - light.zwave_ta_spare_bathroom_main
+    - light.zwave_ta_spare_bathroom_bench
+    - light.zwave_ta_nw_bedroom
+    - light.zwave_ta_sw_bedroom

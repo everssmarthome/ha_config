@@ -1,0 +1,37 @@
+ac_inputs:
+  name: Aircon inputs
+  entities:
+    - input_number.myair_ta_bedroom
+    - input_number.myair_ta_ensuite
+    - input_number.myair_ta_nw_bedroom
+    - input_number.myair_ta_study
+    - input_number.myair_ta_sw_bedroom
+    - input_number.myair_md_bedroom
+    - input_number.myair_md_study
+    - input_number.myair_md_living
+    - input_number.myair_ta_living
+    - input_number.myair_md_media
+
+aircon_power:
+  name: Aircon Power
+  entities:
+    - group.ta_aircon_power
+    - group.md_aircon_power
+
+ta_aircon_power:
+  name: Tim and Addy Aircon
+  entities:
+    - switch.myair_ta_bedroom
+    - switch.myair_ta_ensuite
+    - switch.myair_ta_nw_bedroom
+    - switch.myair_ta_study
+    - switch.myair_ta_sw_bedroom
+    - switch.myair_ta_living
+
+md_aircon_power:
+  name: Mum and Dad Aircon
+  entities:    
+    - switch.myair_md_bedroom
+    - switch.myair_md_study
+    - switch.myair_md_media
+    - switch.myair_md_living  

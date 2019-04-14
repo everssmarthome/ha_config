@@ -1,0 +1,1 @@
+myair_setcmd: 'curl -X GET http://192.168.86.23:2025/setAircon?json={{json}}'

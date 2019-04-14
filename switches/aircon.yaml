@@ -1,0 +1,60 @@
+- platform: command_line
+  switches:
+    myair_power:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22info%22:%7B%22state%22:%22on%22%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22info%22:%7B%22state%22:%22off%22%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_power', 'on') }}"
+    myair_ta_bedroom:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z01%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z01%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_ta_bedroom_state', 'open') }}"
+    myair_ta_ensuite:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z02%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z02%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_ta_ensuite_state', 'open') }}"
+    myair_ta_nw_bedroom:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z03%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z03%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_ta_nw_bedroom_state', 'open') }}"
+    myair_ta_study:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z04%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z04%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_ta_study_state', 'open') }}"
+    myair_ta_sw_bedroom:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z05%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z05%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_ta_sw_bedroom_state', 'open') }}"
+    myair_md_bedroom:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z06%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z06%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_md_bedroom_state', 'open') }}"
+    myair_md_study:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z07%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z07%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_md_study_state', 'open') }}"
+    myair_md_living:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z08%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z08%22:%7B%22value%22:%225%22%7D%7D%7D%7D'
+      # command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z08%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ not is_state('input_number.myair_md_living', '5.0') }}"
+      # value_template: "{{ is_state('sensor.myair_md_living_state', 'open') }}"
+    myair_ta_living:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z09%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z09%22:%7B%22value%22:%225%22%7D%7D%7D%7D'
+      # command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z09%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ not is_state('input_number.myair_ta_living', '5.0') }}"
+    myair_md_media:
+      command_on: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z10%22:%7B%22state%22:%22open%22%7D%7D%7D%7D'
+      command_off: 'curl -X GET http://192.168.86.23:2025/setAircon?json=%7B%22ac1%22:%7B%22zones%22:%7B%22z10%22:%7B%22state%22:%22close%22%7D%7D%7D%7D'
+      command_state: '/bin/true'
+      value_template: "{{ is_state('sensor.myair_md_media_state', 'open') }}"

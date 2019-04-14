@@ -1,0 +1,134 @@
+#Shared
+light.zwave_ext_porch:
+  icon: 'mdi:open-in-new'
+  friendly_name: 'Porch'
+light.zwave_all_main_entry:
+  icon: 'mdi:home-lock'
+  friendly_name: 'Main Entry'
+
+#Tim and Addy
+light.zwave_ta_external_carpark:
+  icon: 'mdi:car'
+  friendly_name: 'Tim''s Car'
+light.zwave_ta_entry:
+  icon: 'mdi:door-open'
+  friendly_name: Entry
+light.zwave_ta_stair_base:
+  icon: 'mdi:trending-down'
+  friendly_name: Landing
+light.zwave_ta_stair_storage:
+  icon: 'mdi:cube-scan'
+  friendly_name: Storage
+light.zwave_ta_living:
+  icon: 'mdi:sofa'
+  friendly_name: Living room
+light.zwave_ta_dining:
+  icon: 'mdi:silverware-variant'
+  friendly_name: Dining
+light.zwave_ta_kitchen_main:
+  icon: 'mdi:stove'
+  friendly_name: Kitchen
+light.zwave_ta_kitchen_bench:
+  icon: 'mdi:dishwasher'
+  friendly_name: Kitchen Bench
+light.zwave_ta_pantry:
+  icon: 'mdi:food'
+  friendly_name: Pantry
+light.zwave_ta_downstairs_hall:
+  icon: 'mdi:swap-vertical-bold'
+  friendly_name: Hallway (G)
+light.zwave_ta_powder_room:
+  icon: 'mdi:toilet'
+  friendly_name: 'Powder Room'
+light.zwave_ta_laundry:
+  icon: 'mdi:washing-machine'
+  friendly_name: 'Laundry'
+light.zwave_ta_alfresco:
+  icon: 'mdi:white-balance-sunny'
+  friendly_name: Alfresco
+light.zwave_ta_stairway:
+  icon: 'mdi:stairs'
+  friendly_name: 'Stairway'
+light.zwave_ta_upstairs_hallway:
+  icon: 'mdi:swap-vertical-bold'
+  friendly_name: 'Hallway (L1)'
+light.zwave_ta_bedroom:
+  icon: 'mdi:bed-empty'
+  friendly_name: 'Master Bedroom'
+light.zwave_ta_walk_in_robe:
+  icon: 'mdi:tshirt-crew'
+  friendly_name: 'Walkin Robe'
+light.zwave_ta_ensuite_main:
+  icon: 'mdi:shower-head'
+  friendly_name: 'Ensuite'
+light.zwave_ta_ensuite_bench:
+  icon: 'mdi:file-cabinet'
+  friendly_name: 'Ensuite Bench'
+light.zwave_ta_ensuite_toilet:
+  icon: 'mdi:toilet'
+  friendly_name: 'Ensuite Toilet'
+light.zwave_ta_study:
+  icon: 'mdi:laptop'
+  friendly_name: 'Study'
+light.zwave_ta_spare_bathroom_main:
+  icon: 'mdi:shower'
+  friendly_name: 'Bathroom'
+light.zwave_ta_spare_bathroom_bench:
+  icon: 'mdi:file-cabinet'
+  friendly_name: 'Bathroom Bench'
+light.zwave_ta_nw_bedroom:
+  icon: 'mdi:bed-empty'
+  friendly_name: 'North Bedroom'
+light.zwave_ta_sw_bedroom:
+  icon: 'mdi:bed-empty'
+  friendly_name: 'South Bedroom'
+
+#Mum and Dad
+light.zwave_md_external_pathway:
+  icon: 'mdi:map-marker-path'
+  friendly_name: 'External Pathway'
+light.zwave_md_laundry:
+  icon: 'mdi:washing-machine'
+  friendly_name: 'Laundry'
+light.zwave_md_entry:
+  icon: 'mdi:door-open'
+  friendly_name: 'Entry'
+light.zwave_md_kitchen_main:
+  icon: 'mdi:stove'
+  friendly_name: 'Kitchen'
+light.zwave_md_kitchen_bench:
+  icon: 'mdi:dishwasher'
+  friendly_name: 'Kitchen Bench'
+light.zwave_md_pantry:
+  icon: 'mdi:food'
+  friendly_name: 'Pantry'
+light.zwave_md_living:
+  icon: 'mdi:sofa'
+  friendly_name: 'Living'
+light.zwave_md_study:
+  icon: 'mdi:laptop'
+  friendly_name: 'Study'
+light.zwave_md_hallway:
+  icon: 'mdi:swap-vertical-bold'
+  friendly_name: 'Hallway'
+light.zwave_md_bedroom:
+  icon: 'mdi:bed-empty'
+  friendly_name: 'Bedroom'
+light.zwave_md_walk_in_robe:
+  icon: 'mdi:tshirt-crew'
+  friendly_name: 'Walkin Robe'
+light.zwave_md_toilet:
+  icon: 'mdi:toilet'
+  friendly_name: 'Toilet'
+light.zwave_md_bathroom_main:
+  icon: 'mdi:shower'
+  friendly_name: 'Bathroom'
+light.zwave_md_bathroom_bench:
+  icon: 'mdi:file-cabinet'
+  friendly_name: 'Bathroom Bench'
+light.zwave_md_media:
+  icon: 'mdi:train'
+  friendly_name: 'Media'
+light.zwave_md_alfresco:
+  icon: 'mdi:white-balance-sunny'
+  friendly_name: 'Alfresco'

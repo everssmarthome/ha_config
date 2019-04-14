@@ -1,0 +1,19 @@
+# myair_ta_auto_power_on:
+#   name: T&A Aircon Auto Turn On
+#   initial: off
+#   icon: mdi:aircon
+
+myair_ta_auto_power_off:
+  name: T&A Aircon Auto Turn Off
+  initial: off
+  icon: mdi:aircon
+
+# myair_md_auto_power_on:
+#   name: M&D Aircon Auto Turn On
+#   initial: off
+#   icon: mdi:aircon
+
+myair_md_auto_power_off:
+  name: M&D Aircon Auto Turn Off
+  initial: off
+  icon: mdi:aircon
