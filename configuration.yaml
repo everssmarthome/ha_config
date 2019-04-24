@@ -94,6 +94,11 @@ map:
 # Track the sun
 sun:
 
+api:
+
+alexa:
+  smart_home:
+
 # Text to speech
 tts:
   - platform: google
