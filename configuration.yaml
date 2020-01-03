@@ -101,7 +101,8 @@ alexa:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Cloud
 cloud:
@@ -175,3 +176,7 @@ automation: !include_dir_merge_list automations/
 # Sensors
 #sensor: !include sensors.yaml
 #binary_sensor: !include binary_sensors.yaml
+
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: "0x7C, 0x61, 0x85, 0xB0, 0x98, 0x87, 0xB9, 0x7A, 0xB7, 0x5A, 0x2A, 0x3B, 0x26, 0x58, 0x41, 0xC8"
